@@ -25,7 +25,7 @@ const themeFonts: Plugin = {
 }
 
 // GitHub Pages serves the site from https://<owner>.github.io/<repo-name>/
-const pagesBasePath = '/genz-store-os/'
+const pagesBasePath = '/tilt-genz-store-os/'
 
 // https://vite.dev/config/
 export default defineConfig(({ command }) => ({

@@ -16,13 +16,13 @@ React + TypeScript (Vite) demo of the store system (sales, stock, returns and br
 ## Deployment: GitHub Pages
 
 - Every push to `main` runs `.github/workflows/deploy.yml`: `npm ci` → `npm run check` → `npm run build` → deploy. If the check fails, nothing is deployed.
-- The site is served from `https://c3811742-afk.github.io/genz-store-os/`. The build uses that sub-path (`base` in `vite.config.ts`). If the repo is renamed, update `pagesBasePath` there.
+- The site is served from `https://c3811742-afk.github.io/tilt-genz-store-os/`. The build uses that sub-path (`base` in `vite.config.ts`). If the repo is renamed, update `pagesBasePath` there.
 - Routing uses `HashRouter` (URLs like `/#/stock/123`), because GitHub Pages can't serve a normal path like `/stock/123` on refresh. Always link with React Router (`<Link>`, `navigate()`) and paths from `routes.ts`, never a hard-coded `href`.
 - Files in `public/` and assets are referenced through Vite (imports, or `import.meta.env.BASE_URL`), never by an absolute path like `/images/x.png`, which would break under the sub-path.
 
 ## Two repos, one codebase
 
-This demo exists twice: `tilt-store-os` (TILT logo) and `genz-store-os` (Gen Z's logo). The two repos are identical except for the brand layer:
+This demo exists twice: `tilt-store-os` (TILT logo) and `tilt-genz-store-os` (Gen Z's logo). The two repos are identical except for the brand layer:
 
 - `src/shared/constants/brand.ts`: brand id, name, logo aspect ratio
 - `src/shared/assets/logos/logo.png`: the logo (black shape on transparent; `BrandLogo` colors it)
@@ -250,4 +250,4 @@ Rules:
 - [ ] Loading, error and empty states handled; every async call and form can fail gracefully
 - [ ] Wording uses standard labels, is short and plain, and has no AI-sounding phrases
 - [ ] No `left` / `right` in layout styles; the page checked in English and Arabic, light and dark, on a phone width and a desktop width
-- [ ] The same change made in the other repo (`tilt-store-os` / `genz-store-os`), unless it's a brand-layer file
+- [ ] The same change made in the other repo (`tilt-store-os` / `tilt-genz-store-os`), unless it's a brand-layer file
