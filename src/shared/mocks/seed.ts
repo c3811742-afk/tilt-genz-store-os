@@ -40,6 +40,7 @@ const builtInRoles = (): Role[] => {
     role('role-driver', 'driver', 'Driver / courier', 'سائق / مندوب', ['transfers.drive']),
     role('role-online', 'online', 'Online orders staff', 'موظف الطلبات الإلكترونية', ['online.orders', 'stock.view', 'stock.otherBranches', 'customers.view']),
     role('role-brand', 'brandPartner', 'Brand partner', 'شريك البراند', ['brandPortal.view']),
+    role('role-it', 'it', 'IT admin', 'مسؤول تقنية المعلومات', [...allPermissions]),
   ];
 };
 
@@ -129,6 +130,8 @@ export const buildSeed = (): Database => {
     notifications: [],
     minQty: {},
     counters: {},
+    heldSales: [],
+    reservations: [],
   };
   const number = (kind: string, digits = 5) => {
     data.counters[kind] = (data.counters[kind] ?? 0) + 1;
